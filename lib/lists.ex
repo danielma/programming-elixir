@@ -40,4 +40,15 @@ defmodule MyList do
   def span(min, max) when min > max, do: raise "Can't get a span where min is larger than max"
   def span(max, max), do: [max]
   def span(min, max), do: [ min | span(min + 1, max) ]
+
+  def prime(limit) do
+    for n <- span(2, limit), Numbers.prime?(n), do: n
+  end
+
+  def totals(tax_rates, orders) do
+    map orders, fn order ->
+      tax_rate = tax_rates[order[:ship_to]] || 0
+      [ { :total_amount, order[:net_amount] + order[:net_amount] * tax_rate } | order ]
+    end
+  end
 end
