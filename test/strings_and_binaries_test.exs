@@ -30,4 +30,21 @@ defmodule MyStringTest do
     assert(MyString.calculate('10 / 5') == 2)
     assert(MyString.calculate('5 - 2') == 3)
   end
+
+  test "center" do
+    assert(
+      MyString.center(["Jøse", "charts"]) === """
+       Jøse
+      charts
+      """
+    )
+
+    assert(
+      MyString.center(["cat", "zebra", "elephant"]) == """
+        cat
+       zebra
+      elephant
+      """
+    )
+  end
 end  

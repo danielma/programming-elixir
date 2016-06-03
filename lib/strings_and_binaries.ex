@@ -40,4 +40,15 @@ defmodule MyString do
   defp _number_digits([ non_digit | _ ], _) do
     raise "Invalid digit '#{[non_digit]}'"
   end
+
+  def center(strings) do
+    max_size = Enum.map(strings, &String.length/1) |> Enum.max
+    out = Enum.map(strings, fn string ->
+      length = String.length(string)
+      just = div(max_size - length, 2) + length
+      String.rjust(string, just)
+    end) |> Enum.join("\n")
+    # for the heredoc tests
+    "#{out}\n"
+  end
 end
