@@ -47,4 +47,9 @@ defmodule MyStringTest do
       """
     )
   end
+
+  test "capitalize_sentences" do
+    assert(MyString.capitalize_sentences("Hi. cANDLE") == "Hi. Candle")
+    assert(MyString.capitalize_sentences("oh. a DOG. woof. ") == "Oh. A dog. Woof. ")
+  end
 end  

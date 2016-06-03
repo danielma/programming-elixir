@@ -51,4 +51,24 @@ defmodule MyString do
     # for the heredoc tests
     "#{out}\n"
   end
+
+  def capitalize_sentences(string), do: capitalize_sentences_after_period(string)
+
+  defp _capitalize_sentences(<< ?., tail::binary >>) do
+    ".#{capitalize_sentences_after_period(tail)}"
+  end
+  defp _capitalize_sentences(<< head::utf8, tail::binary >>) do
+    string = String.downcase("#{[head]}")
+    "#{string}#{_capitalize_sentences(tail)}"
+  end
+  defp _capitalize_sentences(""), do: ""
+
+  def capitalize_sentences_after_period(<< head::utf8, tail::binary >>) when head in ?A..?z do
+    string = String.upcase("#{[head]}")
+    "#{string}#{_capitalize_sentences(tail)}"
+  end
+  def capitalize_sentences_after_period(<< head::utf8, tail::binary >>) do
+    "#{[head]}#{capitalize_sentences_after_period(tail)}"
+  end
+  def capitalize_sentences_after_period(""), do: ""
 end
