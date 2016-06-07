@@ -11,4 +11,9 @@ defmodule ControlFlow do
       _ -> value
     end
   end
+
+  def ok!({ :ok, data }), do: data
+  def ok!(value) do
+    raise "Expected {:ok, data}, but instead was #{inspect(value)}"
+  end
 end
