@@ -1,0 +1,31 @@
+v2.
+{<<"_build/test/lib/learning/ebin/Elixir.MyList.beam">>,'Elixir.MyList',
+ module,<<"lib/lists.ex">>,
+ ['Elixir.Kernel','Elixir.Kernel.Typespec'],
+ [erlang,'Elixir.RuntimeError','Elixir.Access','Elixir.Numbers'],
+ [],nil}.
+{<<"_build/test/lib/learning/ebin/Elixir.Learning.beam">>,'Elixir.Learning',
+ module,<<"lib/learning.ex">>,
+ ['Elixir.Kernel'],
+ [],[],nil}.
+{<<"_build/test/lib/learning/ebin/Elixir.Numbers.beam">>,'Elixir.Numbers',
+ module,<<"lib/numbers.ex">>,
+ ['Elixir.Kernel'],
+ [erlang],
+ [],nil}.
+{<<"_build/test/lib/learning/ebin/Elixir.CustomEnum.beam">>,
+ 'Elixir.CustomEnum',module,<<"lib/custom_enum.ex">>,
+ ['Elixir.Kernel','Elixir.Kernel.Typespec'],
+ [erlang],
+ [],nil}.
+{<<"_build/test/lib/learning/ebin/Elixir.MyString.beam">>,'Elixir.MyString',
+ module,<<"lib/strings_and_binaries.ex">>,
+ ['Elixir.Kernel'],
+ [erlang,'Elixir.RuntimeError','Elixir.String','Elixir.Enum',
+  'Elixir.String.Chars','Elixir.CustomEnum'],
+ [],nil}.
+{<<"_build/test/lib/learning/ebin/Elixir.ControlFlow.beam">>,
+ 'Elixir.ControlFlow',module,<<"lib/control_flow.ex">>,
+ ['Elixir.Kernel'],
+ [erlang,'Elixir.RuntimeError','Elixir.String.Chars'],
+ [],nil}.
